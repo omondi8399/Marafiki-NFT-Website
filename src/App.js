@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { ThemeProvider } from "styled-components";
+import GlobalStyles from "./styles/GlobalStyles";
+import { light } from "./styles/Themes";
+
+import Navigation from "./components/Navigation";
+import Home from "./components/Sections/Home"
+import About from "./components/Sections/About"
+import Roadmap from "./components/Sections/Roadmap"
+import ShowCase from "./components/Sections/Showcase"
+import Team from "./components/Sections/Team"
+import Faq from "./components/Sections/Faq"
+import Footer from "./components/Footer"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <GlobalStyles />
+        <ThemeProvider theme={light}>
+            <Navigation />
+            <Home />
+            <About />
+            <Roadmap />
+            <ShowCase />
+            <Team />
+            <Faq />
+            <Footer />
+        </ThemeProvider>
+    </>
   );
 }
 
