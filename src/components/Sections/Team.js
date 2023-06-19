@@ -11,6 +11,7 @@ import img7 from '../../assets/Nfts/bighead-6.svg';
 import img8 from '../../assets/Nfts/bighead-7.svg';
 import img9 from '../../assets/Nfts/bighead-8.svg';
 import img10 from '../../assets/Nfts/bighead-9.svg';
+import ConfettiComponent from '../Confetti';
 
 const Section = styled.section`
 min-height: 100vh;
@@ -35,7 +36,7 @@ width: 75%;
 margin: 2rem auto;
 
 display: flex;
-justify-content: space-around;
+justify-content: space-between;
 align-items: center;
 flex-wrap: wrap;
 `
@@ -45,12 +46,26 @@ padding: 1rem 0;
 color: ${props => props.theme.body};
 margin: 2rem 1rem;
 position: relative;
+z-index:5;
+
+backdrop-filter: blur(4px);
+border:2px solid ${props => props.theme.text};
+border-radius: 20px;
+
+
+&:hover{
+  img{
+    transform: translateY(-2rem) scale(1.2);
+  }
+}
+
 `
 
 const ImageContainer = styled.div`
-width: 15rem;
-margin: 0 1rem;
-background-color: ${props => props.theme.body};
+width: 95%;
+margin: 0 auto;
+background-color: ${props => props.theme.carouselColor};
+border: 1px solid ${props => props.theme.text};
 
 border-radius: 20px;
 cursor-pointer;
@@ -58,9 +73,28 @@ cursor-pointer;
 img{
   width: 100%;
   height: auto;
+  transition: all 0.3s ease;
 }
 `
+const Name = styled.h2`
+font-size: ${props => props.theme.fontlg};
+display: flex;
+align-center: center;
+justify-content: center;
+text-tranform: uppercase;
+color: ${props => props.theme.text};
+margin-top: 1rem;
+`
 
+const Position = styled.h2`
+font-size: ${props => props.theme.fontmd};
+display: flex;
+align-center: center;
+justify-content: center;
+text-tranform: capitalize;
+color: ${props => `rgba(${props.theme.textRgba},0.9)`};
+font-weight:400;
+`
 
 const MemberComponent = ({img, name=" ",position=" "}) => {
   return(
@@ -68,6 +102,8 @@ const MemberComponent = ({img, name=" ",position=" "}) => {
       <ImageContainer>
         <img src={img} alt={name} />
       </ImageContainer>
+      <Name>{name}</Name>
+      <Position>{position}</Position>
     </Item>
   )
 }
@@ -77,18 +113,19 @@ const MemberComponent = ({img, name=" ",position=" "}) => {
 const Team = () => {
   return (
     <Section>
+      <ConfettiComponent />
       <Title>Team</Title>
       <Container>
-        <MemberComponent img={img1} name='Mbogi' position='founder' />
-        <MemberComponent img={img2} name='Mbogi' position='founder' />
-        <MemberComponent img={img3} name='Mbogi' position='founder' />
-        <MemberComponent img={img4} name='Mbogi' position='founder' />
-        <MemberComponent img={img5} name='Mbogi' position='founder' />
-        <MemberComponent img={img6} name='Mbogi' position='founder' />
-        <MemberComponent img={img7} name='Mbogi' position='founder' />
-        <MemberComponent img={img8} name='Mbogi' position='founder' />
-        <MemberComponent img={img9} name='Mbogi' position='founder' />
-        <MemberComponent img={img10} name='Mbogi' position='founder' />
+        <MemberComponent img={img1} name='SAVITAR' position='founder' />
+        <MemberComponent img={img2} name='FLASH' position='Co-founder' />
+        <MemberComponent img={img3} name='ZOOM' position='director' />
+        <MemberComponent img={img4} name='VIBE' position='manager' />
+        <MemberComponent img={img5} name='MIRROR MASTER' position='artist' />
+        <MemberComponent img={img6} name='KID FLASH' position='social media manager' />
+        <MemberComponent img={img7} name='THE THINKER' position='founder' />
+        <MemberComponent img={img8} name='REVERSED FLASH' position='blockchain specialist' />
+        <MemberComponent img={img9} name='CAPTAIN COLD' position='web3 developer' />
+        <MemberComponent img={img10} name='GREEN ARROW' position='graphic designer' />
       </Container>
     </Section>
   )
