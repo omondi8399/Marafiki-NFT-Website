@@ -37,8 +37,6 @@ position: relative;
     transform: translate(-50%, -50%) scale(1);
     padding: 0.3rem;
 }
-
-
 `
 
 const Button = ({text, link}) => {
