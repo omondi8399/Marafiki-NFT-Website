@@ -137,7 +137,7 @@ const Showcase = () => {
   const Row2Ref = useRef(null);
 
   return (
-    <Section>
+    <Section id='showcase'>
       <Row direction="none" ref={Row1Ref}>
         <NFTItem img={img1} number={243} price={1.9} passRef={Row1Ref}  />
         <NFTItem img={img2} number={524} price={1} passRef={Row1Ref}  />
