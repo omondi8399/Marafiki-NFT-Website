@@ -43,17 +43,28 @@ cursor: pointer;
 `
 
 const Navigation = () => {
+
+  const scrollTo = (id) => {
+    let element = document.getElementById(id);
+
+    element.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+      inline: 'nearest'
+    })
+  }
+
   return (
-    <Section>
+    <Section id='navigation'>
       <NavBar>
         <Logo />
         <Menu>
-          <MenuItem>Home</MenuItem>
-          <MenuItem>About</MenuItem>
-          <MenuItem>Roadmap</MenuItem>
-          <MenuItem>ShowCase</MenuItem>
-          <MenuItem>Team</MenuItem>
-          <MenuItem>Faq</MenuItem>
+          <MenuItem onClick={() => scrollTo('home')}>Home</MenuItem>
+          <MenuItem onClick={() => scrollTo('about')}>About</MenuItem>
+          <MenuItem onClick={() => scrollTo('roadmap')}>Roadmap</MenuItem>
+          <MenuItem onClick={() => scrollTo('showcase')}>ShowCase</MenuItem>
+          <MenuItem onClick={() => scrollTo('team')}>Team</MenuItem>
+          <MenuItem onClick={() => scrollTo('faq')}>Faq</MenuItem>
         </Menu>
         <Button text="Connect Wallet" link="github/omondi8399" />
 
