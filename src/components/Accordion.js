@@ -10,6 +10,10 @@ padding: 1rem 0.5rem;
 display: flex;
 border-bottom: 1px solid ${props => props.theme.carouselColor};
 margin: 3rem 0;
+
+@media (max-width: 48em){
+    margin: 2rem 0;
+}
 `
 const Title = styled.div`
 font-size: ${props => props.theme.fontsm};
@@ -41,6 +45,10 @@ svg{
     width: 1rem;
     height: auto;
     fill:  ${props => props.theme.carouselColor};
+}
+
+@media (max-width: 48em){
+    font-size: ${props => props.theme.fontxl};
 }
 
 `
